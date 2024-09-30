@@ -1,0 +1,15 @@
+CREATE DATABASE your_database;
+
+USE your_database;
+
+CREATE TABLE User (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE Address (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    userId INT NOT NULL,
+    address VARCHAR(255) NOT NULL,
+    FOREIGN KEY (userId) REFERENCES User(id)
+);
